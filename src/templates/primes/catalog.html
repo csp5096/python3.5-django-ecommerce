@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block master %}
+
+    {% block site_wrapper %}
+    <div id ="main">
+        <a href="#content" class="skip_link">Skip to main content</a>
+        <div id="banner">
+            <div class = "bannerIEPadder">
+                <div class="cart">
+                    <!--[link to cart here]-->
+                </div>
+                Modern Music
+            </div>
+        </div>
+        <div id="middle">
+            <div id="sidebar">
+                <div class="sideBarIEPadder">
+                   <!--[search box here]-->
+                    <br>
+                    {% include "tags/category_list.html" %}
+                </div>
+            </div>
+        </div>
+        <div id="content">
+            <a name="content"></a>
+            <div class="contentIDPadder">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    {% block slave %}
+
+    {% endblock %}
+
+{% endblock %}

@@ -7,7 +7,7 @@ class HomePageView(TemplateView):
     template_name = "index.html"
 
 class CatalogPageView(TemplateView):
-    template_name = "catalog.html"
+    template_name = "primes/catalog.html"
 
     """def show_category(request, category_slug, template_name="category.html"):
         c = get_object_or_404(Category, slug=category_slug)

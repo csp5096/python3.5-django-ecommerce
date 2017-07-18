@@ -4,4 +4,4 @@ from django.views.generic import TemplateView, RedirectView
 # Import TemplateView
 
 class ContactPageView(TemplateView):
-    template_name = "contact/contact.html"
+    template_name = "contact/contactform.html"
