@@ -1,6 +1,6 @@
 {% extends 'primes/catalog.html' %}
 
-{% block slave %}
+{% block worker %}
 
     {% block content %}
         <h1>{{ c.name }}</h1>
@@ -16,6 +16,7 @@
                 </a>
             </div>
          {% endfor %}
+
     {% endblock %}
 
 {% endblock %}
