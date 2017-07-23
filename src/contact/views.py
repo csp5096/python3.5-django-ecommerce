@@ -1,29 +1,16 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, RedirectView
+from django.views.generic.edit import FormView
 from django.http import HttpResponseRedirect
-from .forms import NameForm
+from contact.forms import ContactForm
 
 # Import TemplateView
 
-class ContactPageView ( TemplateView ):
+class ContactPageView ( FormView ):
     template_name = "contact/contactform.html"
+    form_class = ContactForm
+    success_url = '/thanks/'
 
-    def get_name(request):
-        # if this is a POST request we need to process the form data
-        if request.method == 'POST':
-            # create a form instance and populate it with data from the request:
-            form = NameForm (request.POST or None)
-            # check whether it's valid:
-            if form.is_valid ():
-                # process the data in form.cleaned_data as required
-                # ...
-                # redirect to a new URL:
-                return HttpResponseRedirect ( '/thanks/' )
-
-            else:
-                return render ( request, 'contactform.html', dict ( form=form ) )
-
-        # if a GET (or any other method) we'll create a blank form
-        else:
-            form = NameForm ()
-            return render ( request, 'contactform.html', dict ( form=form ))
+    def form_valid(self, form):
+        form.send_email()
+        return super(ContactPageView, self).form_valid(form)
