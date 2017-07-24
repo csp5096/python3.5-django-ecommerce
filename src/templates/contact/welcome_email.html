@@ -1,0 +1,19 @@
+{% extends 'primes/contact.html' %}
+
+{% block worker %}
+
+    {% block jumbotron %}
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+          <div class="jumbotron">
+
+            <h1>Welcome to example.com</h1>
+            <p>Dear {{ user.email }}</p>
+            <p>Thank you for signing up to <a href="http://www.example.com">example.com</a></p>
+            <p>The example.com team</p>
+
+          </div>
+
+    {% endblock %}
+
+{% endblock %}

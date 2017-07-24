@@ -12,6 +12,15 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# Email Controls
+
+EMAIL_HOST = 'stp.gmail.com'
+EMAIL_HOST_USER = 'you gmail e-mail'
+EMAIL_HOST_PASSWORD = 'your gmailpassword'
+EMAIL_PORT = '587'
+EMAIL_USE_TLS = True
+
+
 # Environmental Controls
 
 from os.path import join, dirname
