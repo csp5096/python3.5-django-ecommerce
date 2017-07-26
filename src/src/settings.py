@@ -13,12 +13,13 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Email Settings
-EMAIL_HOST = 'stp.gmail.com'
-EMAIL_HOST_USER = 'you gmail e-mail'
-EMAIL_HOST_PASSWORD = 'your gmailpassword'
-EMAIL_PORT = '587'
-EMAIL_USE_TLS = True
-
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = os.getenv('EMAIL_PORT')
+EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS')
 
 # Environment Settings
 from os.path import join, dirname
