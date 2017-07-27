@@ -2,18 +2,28 @@
 
 {% block worker %}
 
+    {% block title %}
+
+        Contact Us
+
+    {% endblock %}
+
     {% block jumbotron %}
 
      <!-- Main jumbotron for a primary marketing message or call to action -->
           <div class="jumbotron">
 
-            <p>Contact Us</p>
+              <h1>Contact Us</h1>
 
-              <form role="form" action="" method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <input type="submit" value="Submit Form" class="btn btn-default"/>
-               </form>
+              {% if form %}
+
+                  <form role="form" action="" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Submit Form" class="btn btn-default"/>
+                  </form>
+
+              {% endif %}
 
           </div>
 
