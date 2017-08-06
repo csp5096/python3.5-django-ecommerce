@@ -95,7 +95,6 @@ TEMPLATES = [
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
-
     'django_openid_auth.auth.OpenIDBackend',
 )
 

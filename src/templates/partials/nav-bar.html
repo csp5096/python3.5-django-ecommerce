@@ -20,7 +20,7 @@
         <li {% if request.path == about %} class="active" {% endif %}>
             <a href="{% url 'about' %}">About</a>
         </li>
-      {% url 'catalog' as catalog %}
+      <!--{% url 'catalog' as catalog %}
         <li {% if request.path == catalog %} class="active" {% endif %}>
             <a href="{% url 'catalog' %}">Catalog</a>
         </li>
@@ -31,7 +31,7 @@
       {% url 'category' as category %}
         <li {% if request.path == category %} class="active" {% endif %}>
             <a href="{% url 'category' %}">Categories</a>
-        </li>
+        </li>-->
       {% url 'contact' as contact %}
         <li {% if request.path == contact %} class="active" {% endif %}>
             <a href="{% url 'contact' %}">Contact Us </a>
